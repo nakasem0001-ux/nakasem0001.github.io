@@ -1,77 +1,62 @@
-/* --------------------
-        全体
--------------------- */
-
-:root {
-  --theme-color: #00a0a0;
+/* サムネイル風プレースホルダー */
+.video-thumbnail {
+  width: 400px;
+  height: 480px;
+  background-color: #262626;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  max-width: 100%;
 }
 
-* {
-  box-sizing: border-box;
+.play-button {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 30px;
+  transition: background 0.2s;
 }
 
-html, body {
+.video-thumbnail:hover .play-button {
+  background: rgba(225, 48, 108, 0.8); /* Instagramカラー */
+}
+
+/* モーダルオーバーレイ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
 }
 
-body {
-  margin: 0;
-  padding: 30px;
-  color: #333;
-}
-
-/* --------------------
-        見出し
--------------------- */
-
-h1, h2, h3 {
-  color: var(--theme-color);
-  border-bottom: dashed 0.1em var(--theme-color);
-}
-
-/* --------------------
-        リンク
--------------------- */
-
-a {
-  color: var(--theme-color);
-  text-decoration: none;
-}
-
-/* --------------------
-        リスト
--------------------- */
-
-ul {
-  list-style: none;
-}
-li:before {
-  content: "★";
-  color: var(--theme-color);
-}
-
-/* --------------------
-          表
--------------------- */
-
-table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  border: solid 1px #f0f0f0;
-  min-width: 70%;
-}
-tr {
+/* モーダルコンテンツ枠 */
+.modal-content {
+  position: relative;
   background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-tr:nth-child(2n) {
-  background-color: #f9f9f9;
-}
-th {
-  background: var(--theme-color);
+
+/* 閉じるボタン */
+.close-btn {
+  position: absolute;
+  top: -35px;
+  right: 0;
   color: #fff;
-}
-th, td {
-  border: solid 1px #f0f0f0;
-  padding: 0.5rem;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
 }
